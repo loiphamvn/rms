@@ -1,0 +1,38 @@
+<!-- Condensed -->
+<h3 class="page-header">List of Payouts</code></small></h3>
+<!-- Toolbar -->
+<div class="push">
+    <button class="btn btn-success" ng-click="savePayout('add')"><i class="fa fa-plus"></i> Add New Payout</button>
+</div>
+<!-- END Toolbar -->
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th class="cell-small text-center" data-toggle="tooltip" title="Toggle all!"><input type="checkbox" id="check2-all" name="check2-all"></th>
+            <th class="text-center">#</th>
+            <th class="text-center">Date</th>
+            <th class="text-center">Recipient Email</th>
+            <th class="text-center">Amount</th>
+            <th class="text-center">Purchases Count</th>
+            <th class="cell-small text-center"><i class="fa fa-bolt"></i> Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="payout in payouts">
+            <td class="text-center"><input type="checkbox"></td>
+            <td class="text-center">{{$index+1}}</td>
+            <td class="text-center">{{payout.date | date:'MM/dd/yyyy h:mma'}}</td>
+            <td class="text-center">{{payout.recipient_email}}</td>
+            <td class="text-center">{{payout.amount | currency}}</td>
+            <td class="text-center">{{payout.purchase_count}}</td>
+            <td class="text-center">
+                <div class="btn-group">
+                    <a title="Details" class="btn btn-xs btn-info" ng-click="viewPayout(payout)"><i class="fa fa-info-circle"></i></a>
+                    <a title="Edit" class="btn btn-xs btn-success" ng-click="savePayout(payout)"><i class="fa fa-pencil"></i></a>
+                    <a title="Delete" class="btn btn-xs btn-danger" ng-click="deletePayout(payout)"><i class="fa fa-times"></i></a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- END Condensed -->

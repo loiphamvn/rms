@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Referral Management System</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- compiled CSS --><% styles.forEach(function(file) { %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+        <!-- compiled JavaScript --><% scripts.forEach(function(file) { %>
+        <script type="text/javascript" src="../<%= file %>"></script><% }); %>
+
+        <!-- compiled application JavaScript --><% scriptsApp.forEach(function(file) { %>
+        <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+        <style>
+            a{
+                cursor: pointer;
+            }
+        </style>
+
+    </head>
+    <body ng-app="rms" ng-controller="MainController">
+        <span loading-spinner spinner-key="main-spinner"></span>
+
+        <!-- Page Container -->
+        <div id="page-container" data-ui-view="root"></div>
+
+</body>
+</html>

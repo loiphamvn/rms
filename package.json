@@ -1,0 +1,25 @@
+{
+    "name": "referral-management-system",
+    "description": "Referral Management System.",
+    "author": "Bee Sight Soft",
+    "dependencies": {
+      "grunt": "~0.4.1",
+      "grunt-recess": "~0.5.0",
+      "grunt-contrib-clean": "~0.4.1",
+      "grunt-contrib-copy": "~0.5.0",
+      "grunt-contrib-jshint": "~0.8.0",
+      "grunt-contrib-concat": "~0.3.0",
+      "grunt-contrib-watch": "~0.5.3",
+      "grunt-contrib-uglify": "~0.3.2",
+      "grunt-karma": "~0.8.0",
+      "grunt-ngmin": "0.0.3",
+      "grunt-html2js": "~0.2.4",
+      "grunt-conventional-changelog": "~0.1.1",
+      "grunt-bump": "0.0.11",
+      "karma-jasmine": "~0.1.5",
+      "karma-firefox-launcher": "~0.1.3",
+      "karma-chrome-launcher": "~0.1.2",      
+      "karma": "~0.12.0"
+    },
+    "engine": "node >= 0.10"
+}

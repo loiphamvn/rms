@@ -1,0 +1,44 @@
+<!-- Inner Container -->
+<div id="inner-container">
+  <!--Sidebar-->
+  <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+
+    <!-- Sidebar search -->
+    <form id="sidebar-search">
+      <div class="input-group">
+        <input type="text" id="sidebar-search-term" name="sidebar-search-term" placeholder="Search..">
+        <button><i class="fa fa-search"></i></button>
+      </div>
+    </form>
+    <!-- END Sidebar search -->
+
+    <!--Primary Navigation -->
+    <nav id="primary-nav">
+      <ul>
+        <li>
+          <a ui-sref="loggedIn.mod.dashboard" active-link><i class="fa fa-fire"></i>Dashboard</a>
+        </li>
+        <li>
+          <a ui-sref="loggedIn.mod.users" active-link><i class="fa fa-users"></i>Users</a>
+        </li>
+        <li>
+          <a ui-sref="loggedIn.mod.referrals" active-link><i class="fa fa-glass"></i>Referrals</a>
+        </li>
+        <li>
+          <a ui-sref="loggedIn.mod.purchases" active-link><i class="fa fa-shopping-cart"></i>Purchases</a>
+        </li>
+        <li>
+          <a ui-sref="loggedIn.mod.payouts" active-link><i class="fa fa-leaf"></i>Payouts</a>
+        </li>
+        <li>
+          <a ui-sref="loggedIn.mod.settings" active-link><i class="fa fa-gears"></i>Settings</a>
+        </li>
+      </ul>
+    </nav>
+    <!--END Primary Navigation -->
+
+  </aside>
+
+  <!-- Page content -->
+  <div id="page-content" data-ui-view="main-content"></div>
+</div>

@@ -1,0 +1,132 @@
+<!-- Navigation info -->
+<ul id="nav-info" class="clearfix">
+  <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+  <li class="active"><a ui-sref="dashboard" active-link>Dashboard</a></li>
+</ul>
+<!-- END Navigation info -->
+
+<!-- Nav Dash -->
+<ul class="nav-dash">
+  <li>
+    <a ui-sref="users" data-toggle="tooltip" title="Users" class="animation-fadeIn" active-link>
+      <i class="fa fa-users"></i>
+    </a>
+  </li>
+  <li>
+    <a ui-sref="referrals" data-toggle="tooltip" title="Referrals" class="animation-fadeIn" active-link>
+      <i class="fa fa-glass"></i>
+    </a>
+  </li>
+  <li>
+    <a ui-sref="purchases" data-toggle="tooltip" title="Purchases" class="animation-fadeIn" active-link>
+      <i class="fa fa-shopping-cart"></i>
+    </a>
+  </li>
+  <li>
+    <a ui-sref="payouts" data-toggle="tooltip" title="Payouts" class="animation-fadeIn" active-link>
+      <i class="fa fa-leaf"></i>
+    </a>
+  </li>
+  <li>
+    <a ui-sref="settings" data-toggle="tooltip" title="Settings" class="animation-fadeIn" active-link>
+      <i class="fa fa-gears"></i>
+    </a>
+  </li>
+</ul>
+<!-- END Nav Dash -->
+
+<!-- Tiles -->
+<!-- Row 1 -->
+<div class="dash-tiles row">
+
+  <!-- Column 1 of Row 1 -->
+  <div class="col-sm-3">
+    <!-- Total Users Tile -->
+    <div class="dash-tile dash-tile-ocean clearfix animation-pullDown">
+      <div class="dash-tile-header">
+        <div class="dash-tile-options">
+          <div class="btn-group">
+            <a ui-sref="users" class="btn btn-default" data-toggle="tooltip" title="Manage Users"><i
+                class="fa fa-users"></i></a>
+            <a ui-sref="users" class="btn btn-default" data-toggle="tooltip" title="Statistics"><i
+                class="fa fa-bar-chart-o"></i></a>
+          </div>
+        </div>
+        Total Users
+      </div>
+      <div class="dash-tile-icon"><i class="fa fa-users"></i></div>
+      <div class="dash-tile-text">{{total.users}}</div>
+    </div>
+    <!-- END Total Users Tile -->
+  </div>
+  <!-- END Column 1 of Row 1 -->
+
+  <!-- Column 2 of Row 1 -->
+  <div class="col-sm-3">
+    <!-- Total Referrals Tile -->
+    <div class="dash-tile dash-tile-flower clearfix animation-pullDown">
+      <div class="dash-tile-header">
+        <div class="dash-tile-options">
+          <div class="btn-group">
+            <a ui-sref="referrals" class="btn btn-default" data-toggle="tooltip" title="Manage Referrals"><i
+                class="fa fa-glass"></i></a>
+            <a ui-sref="referrals" class="btn btn-default" data-toggle="tooltip" title="Statistics"><i
+                class="fa fa-bar-chart-o"></i></a>
+          </div>
+        </div>
+        Total Referrals
+      </div>
+      <div class="dash-tile-icon"><i class="fa fa-glass"></i></div>
+      <div class="dash-tile-text">{{total.referrals}}</div>
+    </div>
+    <!-- END Total Referrals Tile -->
+  </div>
+  <!-- END Column 2 of Row 1 -->
+
+  <!-- Column 2 of Row 1 -->
+  <div class="col-sm-3">
+    <!-- Total Purchases Tile -->
+    <div class="dash-tile dash-tile-oil clearfix animation-pullDown">
+      <div class="dash-tile-header">
+        <div class="dash-tile-options">
+          <div class="btn-group">
+            <a ui-sref="purchases" class="btn btn-default" data-toggle="tooltip" title="Manage Purchases"><i
+                class="fa fa-shopping-cart"></i></a>
+            <a ui-sref="purchases" class="btn btn-default" data-toggle="tooltip" title="Statistics"><i
+                class="fa fa-bar-chart-o"></i></a>
+          </div>
+        </div>
+        Total Purchases
+      </div>
+      <div class="dash-tile-icon"><i class="fa fa-shopping-cart"></i></div>
+      <div class="dash-tile-text">{{total.purchases}}</div>
+    </div>
+    <!-- END Total Purchases Tile -->
+  </div>
+  <!-- END Column 2 of Row 1 -->
+
+  <!-- Column 2 of Row 1 -->
+  <div class="col-sm-3">
+    <!-- Total Payouts Tile -->
+    <div class="dash-tile dash-tile-balloon clearfix animation-pullDown">
+      <div class="dash-tile-header">
+        <div class="dash-tile-options">
+          <div class="btn-group">
+            <a ui-sref="payouts" class="btn btn-default" data-toggle="tooltip" title="Manage Payouts"><i
+                class="fa fa-leaf"></i></a>
+            <a ui-sref="payouts" class="btn btn-default" data-toggle="tooltip" title="Statistics"><i
+                class="fa fa-bar-chart-o"></i></a>
+          </div>
+        </div>
+        Total Payout
+      </div>
+      <div class="dash-tile-icon"><i class="fa fa-leaf"></i></div>
+      <div class="dash-tile-text">{{total.payouts}}</div>
+    </div>
+    <!-- END Total Payouts Tile -->
+
+  </div>
+  <!-- END Column 2 of Row 1 -->
+
+</div>
+<!-- END Tiles -->

@@ -1,0 +1,50 @@
+<div class="modal-header">
+	<h3>{{title}}</h3>
+</div>
+<div class="modal-body">
+  	<form class="form-horizontal" novalidate name="form_add">
+		
+		<h4 class="page-header-sub">Details</h4>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Date</label>
+            <div class="col-md-8">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="MM-dd-yyyy" ng-model="$parent.formadd.date" is-open="$parent.opened" name="date" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Recipient</label>
+            <div class="col-md-8">
+                <select ng-model="formadd.recipient" ng-options="recipient.id as recipient.email for recipient in recipients" class="form-control" name="recipient" required>
+                    <option value="">--Select a Recipient--</option>
+                </select>
+                <span ng-show="form_add.recipient.$dirty">
+                    <p class="text-danger" ng-show="form_add.recipient.$error.required">Please choose a recipient</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Amount</label>
+            <div class="col-md-8">
+                <input type="number" name="amount" class="form-control" 
+                    ng-model="formadd.amount"
+                    required>
+                <span ng-show="form_add.amount.$dirty">
+                    <p class="text-danger" ng-show="form_add.amount.$error.required">Please enter payout amount</p>
+                </span>
+            </div>
+        </div>
+
+    </form> 
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+  	<button class="btn btn-primary" data-ng-click="ok()">Save</button>
+</div>

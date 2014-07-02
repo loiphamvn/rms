@@ -1,0 +1,55 @@
+<div class="modal-header">
+	<h3>{{title}}</h3>
+</div>
+<div class="modal-body">
+  	<form class="form-horizontal" novalidate name="form_add">
+		
+		<h4 class="page-header-sub">Details</h4>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Firstname</label>
+            <div class="col-md-8">
+                <input type="text" name="firstname" class="form-control" 
+                	ng-model="formadd.firstname"
+                	required>
+                <span ng-show="form_add.firstname.$dirty">
+                	<p class="text-danger" ng-show="form_add.firstname.$error.required">Please enter a firstname</p>
+               	</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Lastname</label>
+            <div class="col-md-8">
+                <input type="text" name="lastname" class="form-control" ng-model="formadd.lastname">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Email</label>
+            <div class="col-md-8">
+                <input type="email" name="email" class="form-control"
+                	ng-model="formadd.email"
+                	my-unique="{key: 'users', property: 'email'}"
+                	required>
+                <span ng-show="form_add.email.$dirty">
+                	<p class="text-danger" ng-show="form_add.email.$error.required">Please enter an email</p>
+                	<p class="text-danger" ng-show="form_add.email.$error.email">Please enter a valid email address</p>
+                	<p class="text-danger" ng-show="form_add.email.$error.unique">Email already in use</p>
+               	</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Referral Code</label>
+            <div class="col-md-8">
+                <input type="text" name="referral_code" class="form-control" ng-model="formadd.referral_code">
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+  	<button class="btn btn-primary" data-ng-click="ok()" ng-disabled="form_add.$invalid">Save</button>
+</div>

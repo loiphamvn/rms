@@ -1,0 +1,95 @@
+<div class="modal-header">
+	<h3>{{title}}</h3>
+</div>
+<div class="modal-body">
+  	<form class="form-horizontal" novalidate name="form_add">
+		
+		<h4 class="page-header-sub">Details</h4>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Date</label>
+            <div class="col-md-8">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="MM-dd-yyyy" ng-model="$parent.formadd.date" is-open="$parent.opened" name="date" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Purchaser</label>
+            <div class="col-md-8">
+                <select ng-model="formadd.purchaser" ng-options="purchaser.id as purchaser.email for purchaser in purchasers" class="form-control" name="purchaser" 
+                    required ng-change="chooseReferrer()">
+                    <option value="">--Select a Purchaser--</option>
+                </select>
+                <span ng-show="form_add.purchaser.$dirty">
+                    <p class="text-danger" ng-show="form_add.purchaser.$error.required">Please choose a purchaser</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="formadd.purchaser">
+            <label class="control-label col-md-3">Referrer</label>
+            <div class="col-md-8">
+                <select ng-model="formadd.referrer" ng-options="referrer.id as referrer.referrer_email for referrer in referrers" class="form-control" name="referrer" required>
+                    <option value="">--Select a Referrer--</option>
+                </select>
+                <span ng-show="form_add.referrer.$dirty">
+                    <p class="text-danger" ng-show="form_add.referrer.$error.required">Please choose a referrer</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Amount</label>
+            <div class="col-md-8">
+                <input type="number" name="amount" class="form-control" 
+                    ng-model="formadd.amount"
+                    required>
+                <span ng-show="form_add.amount.$dirty">
+                    <p class="text-danger" ng-show="form_add.amount.$error.required">Please enter purchase amount</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3"></label>
+            <div class="col-md-8">
+                <div class="input-switch switch-large">
+                    <input type="checkbox" ng-checked="formadd.referral_eligible" ng-model="formadd.referral_eligible"> Referral Eligible ?
+                </div>
+                <div class="input-switch" ng-show="formadd.referral_eligible">
+                    <input type="checkbox" ng-checked="formadd.confirmed" ng-model="confirmed"> Confirmed ?
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Payout</label>
+            <div class="col-md-8">
+                <select ng-model="formadd.payout" ng-options="payout.id as payout.recipient_email for payout in payouts" class="form-control" name="payout" required>
+                    <option value="">--Select a Payout--</option>
+                </select>
+                <span ng-show="form_add.payout.$dirty">
+                    <p class="text-danger" ng-show="form_add.payout.$error.required">Please choose a payout</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Commission Amount</label>
+            <div class="col-md-8">
+                <input type="number" name="commission_amount" class="form-control" 
+                    ng-model="formadd.commission_amount">
+            </div>
+        </div>
+
+    </form> 
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+  	<button class="btn btn-primary" data-ng-click="ok()">Save</button>
+</div>

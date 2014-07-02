@@ -1,0 +1,50 @@
+<div class="modal-header">
+	<h3>{{title}}</h3>
+</div>
+<div class="modal-body">
+  	<form class="form-horizontal" novalidate name="form_add">
+		
+		<h4 class="page-header-sub">Details</h4>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Date</label>
+            <div class="col-md-8">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="MM-dd-yyyy" ng-model="$parent.formadd.date" is-open="$parent.opened" name="date" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Referrer</label>
+            <div class="col-md-8">
+                <select ng-model="formadd.referrer" ng-options="referrer.id as referrer.email for referrer in referrers" class="form-control" name="referrer" required>
+                    <option value="">--Select a Referrer--</option>
+                </select>
+                <span ng-show="form_add.referrer.$dirty">
+                    <p class="text-danger" ng-show="form_add.referrer.$error.required">Please choose a referrer</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Referred</label>
+            <div class="col-md-8">
+                <select ng-model="formadd.referred" ng-options="referred.id as referred.email for referred in referreds" class="form-control" name="referred" required>
+                    <option value="">--Select a Referred--</option>
+                </select>
+                <span ng-show="form_add.referred.$dirty">
+                    <p class="text-danger" ng-show="form_add.referred.$error.required">Please choose a referred</p>
+                </span>
+            </div>
+        </div>
+
+    </form> 
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+  	<button class="btn btn-primary" data-ng-click="ok()">Save</button>
+</div>

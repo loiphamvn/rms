@@ -1,0 +1,58 @@
+<!-- Navigation info -->
+<ul id="nav-info" class="clearfix">
+    <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+    <li class="active"><a ui-sref="settings" active-link>Settings</a></li>
+</ul>
+<!-- END Navigation info -->
+
+<!-- Tiles -->
+<!-- Row 1 -->
+<div class="dash-tiles row">
+    
+    <!-- Column 1 of Row 1 -->
+    <div class="col-sm-3">
+        <!-- Total Users Tile -->
+        <div class="dash-tile dash-tile-ocean clearfix animation-pullDown">
+            <div class="dash-tile-header">
+                Minimum purchase amount to count for referral
+            </div>
+            <div class="dash-tile-icon"><i class="fa fa-gears"></i></div>
+            <div class="dash-tile-text"><input type="number" class="form-control" ng-model="settings.minimum_purchase"></div>
+        </div>
+        <!-- END Total Users Tile -->
+    </div>
+    <!-- END Column 1 of Row 1 -->
+
+    <!-- Column 2 of Row 1 -->
+    <div class="col-sm-3">
+        <!-- Total Referrals Tile -->
+        <div class="dash-tile dash-tile-flower clearfix animation-pullDown">
+            <div class="dash-tile-header">
+                Referral type
+            </div>
+            <div class="dash-tile-icon"><i class="fa fa-gears"></i></div>
+            <div class="dash-tile-text">
+                <select class="form-control" ng-model="settings.referral_type" ng-options="rt.id as rt.name for rt in referral_types"></select>
+                <p ng-show="settings.referral_type == 1">$2.00</p>
+                <p ng-show="settings.referral_type == 2">%10</p>
+            </div>
+        </div>
+        <!-- END Total Referrals Tile -->
+    </div>
+    <!-- END Column 2 of Row 1 -->
+
+    <!-- Column 2 of Row 1 -->
+    <div class="col-sm-3">
+        <!-- Total Purchases Tile -->
+        <div class="dash-tile dash-tile-oil clearfix animation-pullDown">
+            <div class="dash-tile-header">
+                Referral waiting period (days)
+            </div>
+            <div class="dash-tile-icon"><i class="fa fa-gears"></i></div>
+            <div class="dash-tile-text"><input type="number" class="form-control" ng-model="settings.referral_waiting"></div>
+        </div>
+        <!-- END Total Purchases Tile -->
+    </div>
+    <!-- END Column 2 of Row 1 -->
+</div>
+<!-- END Tiles -->
